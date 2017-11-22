@@ -1,3 +1,6 @@
+
+import java.awt.BorderLayout;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -24,21 +27,321 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Diagramas = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        Diagramas_Flujo_ventana = new javax.swing.JDialog();
+        jLabel7 = new javax.swing.JLabel();
+        UML = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        DIagramas_UML_ventana = new javax.swing.JDialog();
+        jLabel14 = new javax.swing.JLabel();
+        Diagrama_de_FLujo = new javax.swing.JLabel();
+        Cambios_de_panel = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setText("Diagrama de Flujo Basico");
+
+        jLabel2.setText("Permite crear diagramas de flujo, descendentes de");
+
+        jLabel3.setText("seguimiento de informacion, planeamineto de");
+
+        jLabel4.setText("procesos y de prediccion de estructuras. Contiene");
+
+        jLabel5.setText("conectores y vinculos");
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/220px-DiagramaFlujoLampara.svg.png"))); // NOI18N
+
+        jButton2.setText("Crear");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout DiagramasLayout = new javax.swing.GroupLayout(Diagramas);
+        Diagramas.setLayout(DiagramasLayout);
+        DiagramasLayout.setHorizontalGroup(
+            DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DiagramasLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DiagramasLayout.createSequentialGroup()
+                        .addGroup(DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(DiagramasLayout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(55, 55, 55))))
+        );
+        DiagramasLayout.setVerticalGroup(
+            DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DiagramasLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGroup(DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DiagramasLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DiagramasLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(195, 195, 195))))
+        );
+
+        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel7.setText("Prueba");
+
+        javax.swing.GroupLayout Diagramas_Flujo_ventanaLayout = new javax.swing.GroupLayout(Diagramas_Flujo_ventana.getContentPane());
+        Diagramas_Flujo_ventana.getContentPane().setLayout(Diagramas_Flujo_ventanaLayout);
+        Diagramas_Flujo_ventanaLayout.setHorizontalGroup(
+            Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(215, Short.MAX_VALUE))
+        );
+        Diagramas_Flujo_ventanaLayout.setVerticalGroup(
+            Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(224, Short.MAX_VALUE))
+        );
+
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel9.setText("UML");
+
+        jLabel10.setText("Es un Lenguaje grafico para visualizar,");
+
+        jLabel11.setText("especificar, construir y documentar un sistema");
+
+        jLabel12.setText("UML ofrece un estandar para describir un \"Plano\"");
+
+        jLabel13.setText("del sistema.");
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/ejemplo.jpg"))); // NOI18N
+
+        jButton4.setText("Crear");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout UMLLayout = new javax.swing.GroupLayout(UML);
+        UML.setLayout(UMLLayout);
+        UMLLayout.setHorizontalGroup(
+            UMLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UMLLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(UMLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+        UMLLayout.setVerticalGroup(
+            UMLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UMLLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel14.setText("Prueba");
+
+        javax.swing.GroupLayout DIagramas_UML_ventanaLayout = new javax.swing.GroupLayout(DIagramas_UML_ventana.getContentPane());
+        DIagramas_UML_ventana.getContentPane().setLayout(DIagramas_UML_ventanaLayout);
+        DIagramas_UML_ventanaLayout.setHorizontalGroup(
+            DIagramas_UML_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DIagramas_UML_ventanaLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel14)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+        DIagramas_UML_ventanaLayout.setVerticalGroup(
+            DIagramas_UML_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DIagramas_UML_ventanaLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(jLabel14)
+                .addContainerGap(205, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Diagrama_de_FLujo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/220px-DiagramaFlujoLampara.svg.png"))); // NOI18N
+        Diagrama_de_FLujo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Diagrama_de_FLujoMouseClicked(evt);
+            }
+        });
+
+        Cambios_de_panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        javax.swing.GroupLayout Cambios_de_panelLayout = new javax.swing.GroupLayout(Cambios_de_panel);
+        Cambios_de_panel.setLayout(Cambios_de_panelLayout);
+        Cambios_de_panelLayout.setHorizontalGroup(
+            Cambios_de_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 685, Short.MAX_VALUE)
+        );
+        Cambios_de_panelLayout.setVerticalGroup(
+            Cambios_de_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jButton1.setText("Diagrama de Flujo");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/ejemplo.jpg"))); // NOI18N
+
+        jButton3.setText("Diagrama UML");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(Diagrama_de_FLujo, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jButton3)))
+                .addGap(103, 103, 103)
+                .addComponent(Cambios_de_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(Diagrama_de_FLujo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jButton1)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jButton3)
+                .addContainerGap(150, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(Cambios_de_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Diagrama_de_FLujoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Diagrama_de_FLujoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Diagrama_de_FLujoMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+		Diagramas.setLocation(5, 5);
+		Diagramas.setSize(500, 580);
+		Cambios_de_panel.add(Diagramas, BorderLayout.CENTER);
+		Cambios_de_panel.revalidate();
+		Cambios_de_panel.repaint();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+		
+		Diagramas_Flujo_ventana.setModal(true);
+		
+		Diagramas_Flujo_ventana.pack();
+		Diagramas_Flujo_ventana.setLocationRelativeTo(this);
+		Diagramas_Flujo_ventana.setVisible(true);
+				
+				//
+//
+//        publicacion_texto.setModal(true);
+//        publicacion_texto.pack();
+//        publicacion_texto.setLocationRelativeTo(this);
+//        publicacion_texto.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+		DIagramas_UML_ventana.setModal(true);
+		
+		DIagramas_UML_ventana.pack();
+		DIagramas_UML_ventana.setLocationRelativeTo(this);
+		DIagramas_UML_ventana.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+		UML.setLocation(5, 5);
+		UML.setSize(500, 580);
+		Cambios_de_panel.add(UML, BorderLayout.CENTER);
+		Cambios_de_panel.revalidate();
+		Cambios_de_panel.repaint();
+    }//GEN-LAST:event_jButton3MouseClicked
 
 	/**
 	 * @param args the command line arguments
@@ -76,5 +379,30 @@ public class Principal extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Cambios_de_panel;
+    private javax.swing.JDialog DIagramas_UML_ventana;
+    private javax.swing.JLabel Diagrama_de_FLujo;
+    private javax.swing.JPanel Diagramas;
+    private javax.swing.JDialog Diagramas_Flujo_ventana;
+    private javax.swing.JPanel UML;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
