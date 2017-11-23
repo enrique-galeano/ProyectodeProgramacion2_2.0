@@ -1,8 +1,11 @@
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -477,15 +480,53 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
 		// TODO add your handling code here:
-		JLabel datos = new JLabel();
+		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
 		datos.setBackground(Color.red);
 		datos.setSize(100, 50);
 		Panel_De_Diagramas.add(datos);
-		datos.setLocation(100,100);
+		datos.setText("Procesos");
+		datos.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/datos.png"));
-		
-		
+
+		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+			public void mouseDragged(java.awt.event.MouseEvent evt) {
+				global = datos;
+				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
+							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+
+				}
+
+			}
+		});  //agrega los label
+		datos.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent evt) {
+				global = datos;
+				/* if (evt.isMetaDown()) {
+				 System.out.println(global);
+				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
+				 }*/
+			}
+
+			public void mouseEntered(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseExited(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mousePressed(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseReleased(MouseEvent arg0) {
+				global = datos;
+			}
+		});
     }//GEN-LAST:event_jButton5MouseClicked
 
 	/**
@@ -566,5 +607,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 boolean cambios;
-JLabel global = null;
+	JLabel global = null;
 }
