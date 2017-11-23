@@ -49,6 +49,8 @@ public class Principal extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         Fuente = new javax.swing.JComboBox();
         jLabel16 = new javax.swing.JLabel();
@@ -149,6 +151,55 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/documentos.png"))); // NOI18N
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/if.png"))); // NOI18N
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/in_fin.png"))); // NOI18N
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/Proceso.png"))); // NOI18N
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/separador.png"))); // NOI18N
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fotos/separadorV.png"))); // NOI18N
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
+
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subpro.png"))); // NOI18N
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -159,14 +210,16 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel18)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                             .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))))
+                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -176,17 +229,21 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                     .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(286, Short.MAX_VALUE))
+                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         jLabel7.setText("Fuente: ");
@@ -205,7 +262,7 @@ public class Principal extends javax.swing.JFrame {
         );
         Panel_De_DiagramasLayout.setVerticalGroup(
             Panel_De_DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 619, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout Diagramas_Flujo_ventanaLayout = new javax.swing.GroupLayout(Diagramas_Flujo_ventana.getContentPane());
@@ -250,9 +307,11 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(Estilo_de_fuente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Tamano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -482,8 +541,8 @@ public class Principal extends javax.swing.JFrame {
 		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
-		datos.setBackground(Color.red);
-		datos.setSize(100, 50);
+		datos.setBackground(Color.WHITE);
+		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
 		datos.setText("Procesos");
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -528,6 +587,360 @@ public class Principal extends javax.swing.JFrame {
 			}
 		});
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+		final JLabel datos = new JLabel();
+		datos.setOpaque(true);
+		datos.setBackground(Color.WHITE);
+		datos.setSize(100, 70);
+		Panel_De_Diagramas.add(datos);
+		datos.setText("Documentos");
+		datos.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos.setLocation(100, 100);
+		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/documentos.png"));
+		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+			public void mouseDragged(java.awt.event.MouseEvent evt) {
+				global = datos;
+				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
+							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+
+				}
+
+			}
+		});  //agrega los label
+		datos.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent evt) {
+				global = datos;
+				/* if (evt.isMetaDown()) {
+				 System.out.println(global);
+				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
+				 }*/
+			}
+
+			public void mouseEntered(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseExited(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mousePressed(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseReleased(MouseEvent arg0) {
+				global = datos;
+			}
+		});
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
+		final JLabel datos = new JLabel();
+		datos.setOpaque(true);
+		datos.setBackground(Color.WHITE);
+		datos.setSize(100, 70);
+		Panel_De_Diagramas.add(datos);
+		datos.setText("Documentos");
+		datos.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos.setLocation(100, 100);
+		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/if.png"));
+		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+			public void mouseDragged(java.awt.event.MouseEvent evt) {
+				global = datos;
+				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
+							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+
+				}
+
+			}
+		});  //agrega los label
+		datos.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent evt) {
+				global = datos;
+				/* if (evt.isMetaDown()) {
+				 System.out.println(global);
+				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
+				 }*/
+			}
+
+			public void mouseEntered(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseExited(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mousePressed(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseReleased(MouseEvent arg0) {
+				global = datos;
+			}
+		});
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+		final JLabel datos = new JLabel();
+		datos.setOpaque(true);
+		datos.setBackground(Color.WHITE);
+		datos.setSize(100, 70);
+		Panel_De_Diagramas.add(datos);
+		datos.setText("Documentos");
+		datos.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos.setLocation(100, 100);
+		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/in_fin.png"));
+		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+			public void mouseDragged(java.awt.event.MouseEvent evt) {
+				global = datos;
+				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
+							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+
+				}
+
+			}
+		});  //agrega los label
+		datos.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent evt) {
+				global = datos;
+				/* if (evt.isMetaDown()) {
+				 System.out.println(global);
+				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
+				 }*/
+			}
+
+			public void mouseEntered(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseExited(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mousePressed(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseReleased(MouseEvent arg0) {
+				global = datos;
+			}
+		});
+		
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+		final JLabel datos = new JLabel();
+		datos.setOpaque(true);
+		datos.setBackground(Color.WHITE);
+		datos.setSize(100, 70);
+		Panel_De_Diagramas.add(datos);
+		datos.setText("Documentos");
+		datos.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos.setLocation(100, 100);
+		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/Proceso.png"));
+		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+			public void mouseDragged(java.awt.event.MouseEvent evt) {
+				global = datos;
+				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
+							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+
+				}
+
+			}
+		});  //agrega los label
+		datos.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent evt) {
+				global = datos;
+				/* if (evt.isMetaDown()) {
+				 System.out.println(global);
+				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
+				 }*/
+			}
+
+			public void mouseEntered(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseExited(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mousePressed(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseReleased(MouseEvent arg0) {
+				global = datos;
+			}
+		});
+		
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+		final JLabel datos = new JLabel();
+		datos.setOpaque(true);
+		datos.setBackground(Color.WHITE);
+		datos.setSize(100, 70);
+		Panel_De_Diagramas.add(datos);
+		datos.setText("Documentos");
+		datos.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos.setLocation(100, 100);
+		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separador.png"));
+		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+			public void mouseDragged(java.awt.event.MouseEvent evt) {
+				global = datos;
+				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
+							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+
+				}
+
+			}
+		});  //agrega los label
+		datos.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent evt) {
+				global = datos;
+				/* if (evt.isMetaDown()) {
+				 System.out.println(global);
+				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
+				 }*/
+			}
+
+			public void mouseEntered(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseExited(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mousePressed(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseReleased(MouseEvent arg0) {
+				global = datos;
+			}
+		});
+		
+		
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+		final JLabel datos = new JLabel();
+		datos.setOpaque(true);
+		datos.setBackground(Color.WHITE);
+		datos.setSize(100, 70);
+		Panel_De_Diagramas.add(datos);
+		datos.setText("Documentos");
+		datos.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos.setLocation(100, 100);
+		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separadorV.png"));
+		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+			public void mouseDragged(java.awt.event.MouseEvent evt) {
+				global = datos;
+				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
+							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+
+				}
+
+			}
+		});  //agrega los label
+		datos.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent evt) {
+				global = datos;
+				/* if (evt.isMetaDown()) {
+				 System.out.println(global);
+				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
+				 }*/
+			}
+
+			public void mouseEntered(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseExited(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mousePressed(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseReleased(MouseEvent arg0) {
+				global = datos;
+			}
+		});
+    }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        // TODO add your handling code here:
+		final JLabel datos = new JLabel();
+		datos.setOpaque(true);
+		datos.setBackground(Color.WHITE);
+		datos.setSize(100, 70);
+		Panel_De_Diagramas.add(datos);
+		datos.setText("Documentos");
+		datos.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos.setLocation(100, 100);
+		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/subpro.png"));
+		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+			public void mouseDragged(java.awt.event.MouseEvent evt) {
+				global = datos;
+				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
+							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+
+				}
+
+			}
+		});  //agrega los label
+		datos.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent evt) {
+				global = datos;
+				/* if (evt.isMetaDown()) {
+				 System.out.println(global);
+				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
+				 }*/
+			}
+
+			public void mouseEntered(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseExited(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mousePressed(MouseEvent arg0) {
+				global = datos;
+			}
+
+			public void mouseReleased(MouseEvent arg0) {
+				global = datos;
+			}
+		});
+    }//GEN-LAST:event_jButton13MouseClicked
 
 	/**
 	 * @param args the command line arguments
@@ -578,6 +991,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
