@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
 /*
@@ -69,6 +70,8 @@ public class Principal extends javax.swing.JFrame {
         DIagramas_UML_ventana = new javax.swing.JDialog();
         jLabel14 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
+        Opciones = new javax.swing.JPopupMenu();
+        Eliminar = new javax.swing.JMenuItem();
         Diagrama_de_FLujo = new javax.swing.JLabel();
         Cambios_de_panel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -252,13 +255,19 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel17.setText("Tamaño: ");
 
+        Panel_De_Diagramas.setBackground(new java.awt.Color(255, 255, 255));
         Panel_De_Diagramas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        Panel_De_Diagramas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_De_DiagramasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel_De_DiagramasLayout = new javax.swing.GroupLayout(Panel_De_Diagramas);
         Panel_De_Diagramas.setLayout(Panel_De_DiagramasLayout);
         Panel_De_DiagramasLayout.setHorizontalGroup(
             Panel_De_DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 723, Short.MAX_VALUE)
+            .addGap(0, 724, Short.MAX_VALUE)
         );
         Panel_De_DiagramasLayout.setVerticalGroup(
             Panel_De_DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,9 +281,9 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
                 .addGroup(Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
                         .addGroup(Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(Fuente, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -288,8 +297,9 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(Tamano, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Diagramas_Flujo_ventanaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90))))
+                        .addGap(89, 89, 89))))
         );
         Diagramas_Flujo_ventanaLayout.setVerticalGroup(
             Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,6 +401,14 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jButton11.setText("jButton11");
+
+        Eliminar.setText("jMenuItem1");
+        Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EliminarMouseClicked(evt);
+            }
+        });
+        Opciones.add(Eliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -553,7 +571,7 @@ public class Principal extends javax.swing.JFrame {
 			public void mouseDragged(java.awt.event.MouseEvent evt) {
 				global = datos;
 				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
-						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
+						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 645) {
 					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
 							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
 
@@ -608,7 +626,6 @@ public class Principal extends javax.swing.JFrame {
 							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
 
 				}
-
 			}
 		});  //agrega los label
 		datos.addMouseListener(new MouseListener() {
@@ -645,7 +662,7 @@ public class Principal extends javax.swing.JFrame {
 		datos.setBackground(Color.WHITE);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
-		datos.setText("Documentos");
+		datos.setText("if");
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/if.png"));
@@ -695,7 +712,7 @@ public class Principal extends javax.swing.JFrame {
 		datos.setBackground(Color.WHITE);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
-		datos.setText("Documentos");
+		datos.setText("Inicio o Finalizacion");
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/in_fin.png"));
@@ -746,7 +763,7 @@ public class Principal extends javax.swing.JFrame {
 		datos.setBackground(Color.WHITE);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
-		datos.setText("Documentos");
+		datos.setText("Proceso");
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/Proceso.png"));
@@ -795,9 +812,10 @@ public class Principal extends javax.swing.JFrame {
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
 		datos.setBackground(Color.WHITE);
-		datos.setSize(100, 70);
+		
 		Panel_De_Diagramas.add(datos);
-		datos.setText("Documentos");
+		datos.setText("Separador");
+		datos.setSize(45,80);
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separador.png"));
@@ -849,7 +867,7 @@ public class Principal extends javax.swing.JFrame {
 		datos.setBackground(Color.WHITE);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
-		datos.setText("Documentos");
+		datos.setText("Separador Vertical");
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separadorV.png"));
@@ -899,7 +917,7 @@ public class Principal extends javax.swing.JFrame {
 		datos.setBackground(Color.WHITE);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
-		datos.setText("Documentos");
+		datos.setText("Subproceso");
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/subpro.png"));
@@ -942,6 +960,27 @@ public class Principal extends javax.swing.JFrame {
 		});
     }//GEN-LAST:event_jButton13MouseClicked
 
+    private void Panel_De_DiagramasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_De_DiagramasMouseClicked
+        // TODO add your handling code here:
+		if (evt.isMetaDown()) {
+			//if (global.getX() && global.getY()) {
+				Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+			//}
+		}
+    }//GEN-LAST:event_Panel_De_DiagramasMouseClicked
+
+    private void EliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarMouseClicked
+        // TODO add your handling code here:
+		try {
+			int Answer = JOptionPane.showConfirmDialog(this.Cambios_de_panel, "Seguro(a)?");
+			if (Answer == JOptionPane.OK_OPTION) {
+				this.Cambios_de_panel.remove(global);
+				Cambios_de_panel.repaint();
+			}
+		} catch (Exception e) {
+		}
+    }//GEN-LAST:event_EliminarMouseClicked
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -983,8 +1022,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel Diagrama_de_FLujo;
     private javax.swing.JPanel Diagramas;
     private javax.swing.JDialog Diagramas_Flujo_ventana;
+    private javax.swing.JMenuItem Eliminar;
     private javax.swing.JComboBox Estilo_de_fuente;
     private javax.swing.JComboBox Fuente;
+    private javax.swing.JPopupMenu Opciones;
     private javax.swing.JPanel Panel_De_Diagramas;
     private javax.swing.JComboBox Tamano;
     private javax.swing.JPanel UML;
