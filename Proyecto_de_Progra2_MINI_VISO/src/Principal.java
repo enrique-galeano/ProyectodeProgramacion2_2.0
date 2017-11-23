@@ -6,7 +6,6 @@ import java.awt.BorderLayout;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author enriquejosegaleanotalavera
@@ -36,7 +35,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         Diagramas_Flujo_ventana = new javax.swing.JDialog();
-        jLabel7 = new javax.swing.JLabel();
         UML = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -118,24 +116,15 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(195, 195, 195))))
         );
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel7.setText("Prueba");
-
         javax.swing.GroupLayout Diagramas_Flujo_ventanaLayout = new javax.swing.GroupLayout(Diagramas_Flujo_ventana.getContentPane());
         Diagramas_Flujo_ventana.getContentPane().setLayout(Diagramas_Flujo_ventanaLayout);
         Diagramas_Flujo_ventanaLayout.setHorizontalGroup(
             Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(215, Short.MAX_VALUE))
+            .addGap(0, 953, Short.MAX_VALUE)
         );
         Diagramas_Flujo_ventanaLayout.setVerticalGroup(
             Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
+            .addGap(0, 659, Short.MAX_VALUE)
         );
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -229,7 +218,7 @@ public class Principal extends javax.swing.JFrame {
         Cambios_de_panel.setLayout(Cambios_de_panelLayout);
         Cambios_de_panelLayout.setHorizontalGroup(
             Cambios_de_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 601, Short.MAX_VALUE)
         );
         Cambios_de_panelLayout.setVerticalGroup(
             Cambios_de_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,22 +252,22 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(Diagrama_de_FLujo, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(102, 102, 102)
-                        .addComponent(jButton3)))
-                .addGap(103, 103, 103)
-                .addComponent(Cambios_de_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                        .addComponent(jButton3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(Diagrama_de_FLujo, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addComponent(Cambios_de_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(Diagrama_de_FLujo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addComponent(Diagrama_de_FLujo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jButton1)
                 .addGap(45, 45, 45)
@@ -296,51 +285,59 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Diagrama_de_FLujoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Diagrama_de_FLujoMouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
     }//GEN-LAST:event_Diagrama_de_FLujoMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-		Diagramas.setLocation(5, 5);
-		Diagramas.setSize(500, 580);
-		Cambios_de_panel.add(Diagramas, BorderLayout.CENTER);
-		Cambios_de_panel.revalidate();
-		Cambios_de_panel.repaint();
+		// TODO add your handling code here:
+		cambios = false;
+		if (cambios == false) {
+			
+			Diagramas.setLocation(5, 5);
+			Diagramas.setSize(500, 580);
+			Cambios_de_panel.add(Diagramas, BorderLayout.CENTER);
+			Cambios_de_panel.revalidate();
+			//Cambios_de_panel.repaint();
+			
+
+		}
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
-		
+		// TODO add your handling code here:
 		Diagramas_Flujo_ventana.setModal(true);
-		
 		Diagramas_Flujo_ventana.pack();
 		Diagramas_Flujo_ventana.setLocationRelativeTo(this);
 		Diagramas_Flujo_ventana.setVisible(true);
-				
-				//
-//
-//        publicacion_texto.setModal(true);
-//        publicacion_texto.pack();
-//        publicacion_texto.setLocationRelativeTo(this);
-//        publicacion_texto.setVisible(true);
+		//
+		//publicacion_texto.setModal(true);
+		//publicacion_texto.pack();
+		//publicacion_texto.setLocationRelativeTo(this);
+		//publicacion_texto.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		DIagramas_UML_ventana.setModal(true);
-		
 		DIagramas_UML_ventana.pack();
 		DIagramas_UML_ventana.setLocationRelativeTo(this);
 		DIagramas_UML_ventana.setVisible(true);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        // TODO add your handling code here:
-		UML.setLocation(5, 5);
-		UML.setSize(500, 580);
-		Cambios_de_panel.add(UML, BorderLayout.CENTER);
-		Cambios_de_panel.revalidate();
-		Cambios_de_panel.repaint();
+		// TODO add your handling code here:
+		cambios = true;
+		if (cambios == true) {
+//			Cambios_de_panel.repaint();
+	
+			UML.setLocation(5, 5);
+			UML.setSize(500, 580);
+			Cambios_de_panel.add(UML, BorderLayout.CENTER);
+			Cambios_de_panel.revalidate();
+			//Cambios_de_panel.repaint();
+
+		}
     }//GEN-LAST:event_jButton3MouseClicked
 
 	/**
@@ -348,7 +345,7 @@ public class Principal extends javax.swing.JFrame {
 	 */
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
 		 * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
 		 */
@@ -368,7 +365,7 @@ public class Principal extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-        //</editor-fold>
+		//</editor-fold>
 
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
@@ -401,8 +398,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+boolean cambios;
 }
