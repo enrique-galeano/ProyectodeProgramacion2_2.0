@@ -8,9 +8,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
@@ -60,7 +62,12 @@ public class Principal extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         Panel_De_Diagramas = new javax.swing.JPanel();
-        jButton14 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         UML = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -74,6 +81,11 @@ public class Principal extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         Opciones = new javax.swing.JPopupMenu();
         dar_nombre_a_variables = new javax.swing.JMenuItem();
+        verArchivo = new javax.swing.JDialog();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_text = new javax.swing.JTextArea();
         Diagrama_de_FLujo = new javax.swing.JLabel();
         Cambios_de_panel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -263,19 +275,52 @@ public class Principal extends javax.swing.JFrame {
         Panel_De_Diagramas.setLayout(Panel_De_DiagramasLayout);
         Panel_De_DiagramasLayout.setHorizontalGroup(
             Panel_De_DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 676, Short.MAX_VALUE)
+            .addGap(0, 747, Short.MAX_VALUE)
         );
         Panel_De_DiagramasLayout.setVerticalGroup(
             Panel_De_DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 592, Short.MAX_VALUE)
         );
 
-        jButton14.setText("Guardar");
-        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton14MouseClicked(evt);
+        jMenu2.setText("Opciones");
+
+        jMenuItem3.setText("Crear directorio");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
             }
         });
+        jMenu2.add(jMenuItem3);
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.META_MASK));
+        jMenuItem1.setText("Guardar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.META_MASK));
+        jMenuItem2.setText("Guardar Como");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuItem4.setText("Abrir Archivo");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu2);
+
+        Diagramas_Flujo_ventana.setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout Diagramas_Flujo_ventanaLayout = new javax.swing.GroupLayout(Diagramas_Flujo_ventana.getContentPane());
         Diagramas_Flujo_ventana.getContentPane().setLayout(Diagramas_Flujo_ventanaLayout);
@@ -284,24 +329,18 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addGap(32, 32, 32)
                 .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(47, 47, 47))
-            .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
         Diagramas_Flujo_ventanaLayout.setVerticalGroup(
             Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Diagramas_Flujo_ventanaLayout.createSequentialGroup()
+                .addContainerGap(75, Short.MAX_VALUE)
+                .addGroup(Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62))
         );
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -389,6 +428,52 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         Opciones.add(dar_nombre_a_variables);
+
+        jLabel7.setText("Lo que contiene el archivo");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        ta_text.setColumns(20);
+        ta_text.setRows(5);
+        jScrollPane1.setViewportView(ta_text);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout verArchivoLayout = new javax.swing.GroupLayout(verArchivo.getContentPane());
+        verArchivo.getContentPane().setLayout(verArchivoLayout);
+        verArchivoLayout.setHorizontalGroup(
+            verArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(verArchivoLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(verArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        verArchivoLayout.setVerticalGroup(
+            verArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(verArchivoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -703,7 +788,7 @@ public class Principal extends javax.swing.JFrame {
 			System.out.println("hola prroos");
 			datos.setText("Fin");
 			arregloLabel.add(datos);
-			System.out.println(arregloLabel.indexOf(1));
+			System.out.println(arregloLabel);
 		}
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
@@ -968,9 +1053,9 @@ public class Principal extends javax.swing.JFrame {
 		global.setText(cambio);
     }//GEN-LAST:event_dar_nombre_a_variablesActionPerformed
 
-    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
-		// TODO add your handling code here:
-		File archivo = new File("./Archivo.txt");
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+		File archivo = new File("./archivo.txt");
 		FileWriter fw = null;
 		BufferedWriter bw = null;
 
@@ -990,9 +1075,9 @@ public class Principal extends javax.swing.JFrame {
 				}
 			}
 			
-			if (ll.getName().equals("Proceso") && (ll.getText().contains("+"))) {
+			if (ll.getName().contains("Proceso") && (ll.getText().contains("+"))) {
 				try {
-					fw = new FileWriter(archivo , true);
+					fw = new FileWriter(archivo , false);
 					bw = new BufferedWriter(fw);
 
 					bw.write(" " + ll.getText() + ";");
@@ -1022,7 +1107,40 @@ public class Principal extends javax.swing.JFrame {
 			} catch (IOException e) {
 			}
 		}
-    }//GEN-LAST:event_jButton14MouseClicked
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+		JFileChooser filechoose = new JFileChooser();
+		int seleccion = filechoose.showSaveDialog(Diagramas_Flujo_ventana);
+		if (seleccion == JFileChooser.APPROVE_OPTION) {
+			File dir = filechoose.getSelectedFile();
+			boolean fueCreado = dir.mkdir();
+			if (fueCreado) {
+				JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "Directorio Creado con exito");
+			}else{
+				JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "El directorio no se creo con exito");
+			}
+		}
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+		verArchivo.setModal(true);
+		verArchivo.pack();
+		verArchivo.setLocationRelativeTo(this);
+		verArchivo.setVisible(true);
+		
+		File fichero = null;
+//		Diagramas_Flujo_ventana.setModal(true);
+//		Diagramas_Flujo_ventana.pack();
+//		Diagramas_Flujo_ventana.setLocationRelativeTo(this);
+//		Diagramas_Flujo_ventana.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -1074,7 +1192,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1096,9 +1213,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea ta_text;
+    private javax.swing.JDialog verArchivo;
     // End of variables declaration//GEN-END:variables
 	boolean cambios;
 	JLabel global = null;
