@@ -700,8 +700,10 @@ public class Principal extends javax.swing.JFrame {
 			datos.setText("Inicio");
 			arregloLabel.add(0, datos);
 		} else {
+			System.out.println("hola prroos");
 			datos.setText("Fin");
 			arregloLabel.add(datos);
+			System.out.println(arregloLabel.indexOf(1));
 		}
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
@@ -968,14 +970,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
 		// TODO add your handling code here:
-		File archive = new File("./Archivo.txt");
+		File archivo = new File("./Archivo.txt");
 		FileWriter fw = null;
 		BufferedWriter bw = null;
 
 		for (JLabel ll : arregloLabel) {
 			if (ll.getText().equals("Inicio")) {
 				try {
-					fw = new FileWriter(archive, false);
+					fw = new FileWriter(archivo , false);
 					bw = new BufferedWriter(fw);
 					bw.write("#include <iostream>");
 					bw.write("\n");
@@ -987,22 +989,22 @@ public class Principal extends javax.swing.JFrame {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
 			}
+			
 			if (ll.getName().equals("Proceso") && (ll.getText().contains("+"))) {
 				try {
-					fw = new FileWriter(archive, true);
+					fw = new FileWriter(archivo , true);
 					bw = new BufferedWriter(fw);
-					
+
 					bw.write(" " + ll.getText() + ";");
 					bw.flush();
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
-				
-
 			}
+
 			if (ll.getText().equals("Fin")) {
 				try {
-					fw = new FileWriter(archive, false);
+					fw = new FileWriter(archivo , false);
 					bw = new BufferedWriter(fw);
 					bw.write("\n");
 					bw.write("return 0;");
@@ -1012,8 +1014,8 @@ public class Principal extends javax.swing.JFrame {
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
-				
 			}
+
 			try {
 				bw.close();
 				fw.close();
