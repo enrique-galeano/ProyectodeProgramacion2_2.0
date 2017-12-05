@@ -1,9 +1,16 @@
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -42,8 +49,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         jMenuItem4.setText("jMenuItem4");
 
@@ -114,11 +121,21 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem6);
 
-        jMenuItem5.setText("Guardar Archivo");
-        jMenu1.add(jMenuItem5);
-
         jMenuItem3.setText("Abrir Archivo");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
+
+        jMenuItem5.setText("Guardar Archivo");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
 
@@ -180,7 +197,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-		// TODO add your handling code here:
 		Arbol.setModal(true);
 		Arbol.pack();
 		Arbol.setLocationRelativeTo(this);
@@ -188,8 +204,85 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
+		DefaultTreeModel m = (DefaultTreeModel) arbolito.getModel();
+		JFileChooser jf = new JFileChooser();
+		jf.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		int s = jf.showOpenDialog(Arbol);
+		File f = jf.getSelectedFile();
+		m.setRoot(new DefaultMutableTreeNode(f.getName()));
+		listar_todo(f, (DefaultMutableTreeNode) m.getRoot());
+
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+		// TODO add your handling code here:
+		File fichero = null;
+		FileReader fr = null;
+		BufferedReader br = null;
+		ta_1.setText(" ");
+		try {
+			JFileChooser jfc = new JFileChooser();
+			FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivo de Texto", "txt");
+			FileNameExtensionFilter filtro2 = new FileNameExtensionFilter("Imagenes", "jpg", "png", "bmp");
+			jfc.setFileFilter(filtro);
+			jfc.addChoosableFileFilter(filtro2);
+			int seleccion = jfc.showOpenDialog(this);
+			if (seleccion == JFileChooser.APPROVE_OPTION) {
+				fichero = jfc.getSelectedFile();
+				fr = new FileReader(fichero);
+				br=new BufferedReader(fr);
+				String linea;
+				ta_1.setText(" ");
+				while ((linea = br.readLine()) != null) {					
+					ta_1.append(linea);
+					ta_1.append("\n");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			br.close();
+			fr.close();
+		} catch (IOException e) {
+		}
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+		JFileChooser jf = new JFileChooser();
+		FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos de texto", "txt");
+		jf.addChoosableFileFilter(filtro);
+		int seleccion = jf.showSaveDialog(this);
+		
+		
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+		if (seleccion == JFileChooser.APPROVE_OPTION) {
+			try {
+				File fichero = null;
+				if (jf.getFileFilter().getDescription().equals("Archivos de texto")) {
+					fichero = new File(jf.getSelectedFile().getPath() + ".txt");
+				}else{
+					fichero = jf.getSelectedFile();
+				}
+				fw = new FileWriter(fichero);
+				bw = new BufferedWriter(fw);
+				bw.write(ta_1.getText());
+				ta_1.setText("");
+				bw.flush();
+				JOptionPane.showMessageDialog(this, "Archivo guardado exitosamente");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			try {
+				bw.close();
+				fw.close();;
+			} catch (Exception e) {
+			}
+		}
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -247,10 +340,10 @@ public class Principal extends javax.swing.JFrame {
 				if (temp.isFile()) {
 					DefaultMutableTreeNode n = new DefaultMutableTreeNode(temp.getName());
 					nodo.add(n);
-				}else{
+				} else {
 					DefaultMutableTreeNode n = new DefaultMutableTreeNode(temp.getName());
 					nodo.add(n);
-					listar_todo(temp,n);
+					listar_todo(temp, n);
 				}
 			}
 		} catch (Exception e) {

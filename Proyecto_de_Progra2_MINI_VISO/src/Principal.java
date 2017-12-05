@@ -71,7 +71,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         Opciones = new javax.swing.JPopupMenu();
-        Eliminar = new javax.swing.JMenuItem();
+        Cambiar = new javax.swing.JMenuItem();
         Diagrama_de_FLujo = new javax.swing.JLabel();
         Cambios_de_panel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -267,7 +267,7 @@ public class Principal extends javax.swing.JFrame {
         Panel_De_Diagramas.setLayout(Panel_De_DiagramasLayout);
         Panel_De_DiagramasLayout.setHorizontalGroup(
             Panel_De_DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 724, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         Panel_De_DiagramasLayout.setVerticalGroup(
             Panel_De_DiagramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,9 +281,9 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addGroup(Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
                         .addGroup(Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(Fuente, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -295,10 +295,9 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
                             .addComponent(Tamano, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Diagramas_Flujo_ventanaLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                        .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(342, Short.MAX_VALUE))
+                    .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
+                        .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(89, 89, 89))))
         );
         Diagramas_Flujo_ventanaLayout.setVerticalGroup(
@@ -402,13 +401,13 @@ public class Principal extends javax.swing.JFrame {
 
         jButton11.setText("jButton11");
 
-        Eliminar.setText("jMenuItem1");
-        Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                EliminarMouseClicked(evt);
+        Cambiar.setText("Cambiar");
+        Cambiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CambiarActionPerformed(evt);
             }
         });
-        Opciones.add(Eliminar);
+        Opciones.add(Cambiar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -559,7 +558,7 @@ public class Principal extends javax.swing.JFrame {
 		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
-		datos.setBackground(Color.WHITE);
+		datos.setBackground(Color.GREEN);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
 		datos.setText("Procesos");
@@ -582,10 +581,10 @@ public class Principal extends javax.swing.JFrame {
 		datos.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
 				global = datos;
-				/* if (evt.isMetaDown()) {
-				 System.out.println(global);
-				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
-				 }*/
+				if (evt.isMetaDown()) {
+					System.out.println(global);
+					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+				}
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
@@ -607,7 +606,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
 		datos.setBackground(Color.WHITE);
@@ -656,10 +655,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
-		datos.setBackground(Color.WHITE);
+		datos.setBackground(Color.ORANGE);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
 		datos.setText("if");
@@ -681,10 +680,10 @@ public class Principal extends javax.swing.JFrame {
 		datos.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
 				global = datos;
-				/* if (evt.isMetaDown()) {
-				 System.out.println(global);
-				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
-				 }*/
+				if (evt.isMetaDown()) {
+					System.out.println(global);
+					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+				}
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
@@ -706,12 +705,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
-		datos.setBackground(Color.WHITE);
+		datos.setBackground(Color.CYAN);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
+
 		datos.setText("Inicio o Finalizacion");
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
@@ -731,10 +731,10 @@ public class Principal extends javax.swing.JFrame {
 		datos.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
 				global = datos;
-				/* if (evt.isMetaDown()) {
-				 System.out.println(global);
-				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
-				 }*/
+				if (evt.isMetaDown()) {
+					System.out.println(global);
+					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+				}
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
@@ -753,11 +753,11 @@ public class Principal extends javax.swing.JFrame {
 				global = datos;
 			}
 		});
-		
+
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
 		datos.setBackground(Color.WHITE);
@@ -778,14 +778,14 @@ public class Principal extends javax.swing.JFrame {
 				}
 
 			}
-		});  //agrega los label
+		});
 		datos.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
 				global = datos;
-				/* if (evt.isMetaDown()) {
-				 System.out.println(global);
-				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
-				 }*/
+				if (evt.isMetaDown()) {
+					System.out.println(global);
+					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+				}
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
@@ -804,18 +804,18 @@ public class Principal extends javax.swing.JFrame {
 				global = datos;
 			}
 		});
-		
+
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
 		datos.setBackground(Color.WHITE);
-		
+
 		Panel_De_Diagramas.add(datos);
 		datos.setText("Separador");
-		datos.setSize(45,80);
+		datos.setSize(45, 80);
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separador.png"));
@@ -830,14 +830,14 @@ public class Principal extends javax.swing.JFrame {
 				}
 
 			}
-		});  //agrega los label
+		});
 		datos.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
 				global = datos;
-				/* if (evt.isMetaDown()) {
-				 System.out.println(global);
-				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
-				 }*/
+				if (evt.isMetaDown()) {
+					System.out.println(global);
+					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+				}
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
@@ -856,12 +856,12 @@ public class Principal extends javax.swing.JFrame {
 				global = datos;
 			}
 		});
-		
-		
+
+
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
 		datos.setBackground(Color.WHITE);
@@ -882,14 +882,14 @@ public class Principal extends javax.swing.JFrame {
 				}
 
 			}
-		});  //agrega los label
+		});
 		datos.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
 				global = datos;
-				/* if (evt.isMetaDown()) {
-				 System.out.println(global);
-				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
-				 }*/
+				if (evt.isMetaDown()) {
+					System.out.println(global);
+					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+				}
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
@@ -911,7 +911,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		final JLabel datos = new JLabel();
 		datos.setOpaque(true);
 		datos.setBackground(Color.WHITE);
@@ -936,10 +936,10 @@ public class Principal extends javax.swing.JFrame {
 		datos.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
 				global = datos;
-				/* if (evt.isMetaDown()) {
-				 System.out.println(global);
-				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
-				 }*/
+				if (evt.isMetaDown()) {
+					System.out.println(global);
+					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+				}
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
@@ -961,25 +961,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void Panel_De_DiagramasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_De_DiagramasMouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		if (evt.isMetaDown()) {
 			//if (global.getX() && global.getY()) {
-				Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
+			Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
 			//}
 		}
     }//GEN-LAST:event_Panel_De_DiagramasMouseClicked
 
-    private void EliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarMouseClicked
+    private void CambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CambiarActionPerformed
         // TODO add your handling code here:
-		try {
-			int Answer = JOptionPane.showConfirmDialog(this.Cambios_de_panel, "Seguro(a)?");
-			if (Answer == JOptionPane.OK_OPTION) {
-				this.Cambios_de_panel.remove(global);
-				Cambios_de_panel.repaint();
-			}
-		} catch (Exception e) {
-		}
-    }//GEN-LAST:event_EliminarMouseClicked
+		String cambio = JOptionPane.showInputDialog(Diagramas_Flujo_ventana,"Ingrese el nombre de la variable");
+		global.setText(cambio);
+    }//GEN-LAST:event_CambiarActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -1017,12 +1011,12 @@ public class Principal extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Cambiar;
     private javax.swing.JPanel Cambios_de_panel;
     private javax.swing.JDialog DIagramas_UML_ventana;
     private javax.swing.JLabel Diagrama_de_FLujo;
     private javax.swing.JPanel Diagramas;
     private javax.swing.JDialog Diagramas_Flujo_ventana;
-    private javax.swing.JMenuItem Eliminar;
     private javax.swing.JComboBox Estilo_de_fuente;
     private javax.swing.JComboBox Fuente;
     private javax.swing.JPopupMenu Opciones;
