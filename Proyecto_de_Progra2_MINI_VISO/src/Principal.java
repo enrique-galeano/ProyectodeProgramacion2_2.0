@@ -3,8 +3,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -85,7 +88,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        ta_text = new javax.swing.JTextArea();
+        ta_1 = new javax.swing.JTextArea();
         Diagrama_de_FLujo = new javax.swing.JLabel();
         Cambios_de_panel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -433,9 +436,9 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        ta_text.setColumns(20);
-        ta_text.setRows(5);
-        jScrollPane1.setViewportView(ta_text);
+        ta_1.setColumns(20);
+        ta_1.setRows(5);
+        jScrollPane1.setViewportView(ta_1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1054,7 +1057,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_dar_nombre_a_variablesActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		File archivo = new File("./archivo.txt");
 		FileWriter fw = null;
 		BufferedWriter bw = null;
@@ -1062,7 +1065,7 @@ public class Principal extends javax.swing.JFrame {
 		for (JLabel ll : arregloLabel) {
 			if (ll.getText().equals("Inicio")) {
 				try {
-					fw = new FileWriter(archivo , false);
+					fw = new FileWriter(archivo, false);
 					bw = new BufferedWriter(fw);
 					bw.write("#include <iostream>");
 					bw.write("\n");
@@ -1074,10 +1077,10 @@ public class Principal extends javax.swing.JFrame {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
 			}
-			
+
 			if (ll.getName().contains("Proceso") && (ll.getText().contains("+"))) {
 				try {
-					fw = new FileWriter(archivo , false);
+					fw = new FileWriter(archivo, false);
 					bw = new BufferedWriter(fw);
 
 					bw.write(" " + ll.getText() + ";");
@@ -1089,7 +1092,7 @@ public class Principal extends javax.swing.JFrame {
 
 			if (ll.getText().equals("Fin")) {
 				try {
-					fw = new FileWriter(archivo , false);
+					fw = new FileWriter(archivo, false);
 					bw = new BufferedWriter(fw);
 					bw.write("\n");
 					bw.write("return 0;");
@@ -1110,11 +1113,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		JFileChooser filechoose = new JFileChooser();
 		int seleccion = filechoose.showSaveDialog(Diagramas_Flujo_ventana);
 		if (seleccion == JFileChooser.APPROVE_OPTION) {
@@ -1122,20 +1125,48 @@ public class Principal extends javax.swing.JFrame {
 			boolean fueCreado = dir.mkdir();
 			if (fueCreado) {
 				JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "Directorio Creado con exito");
-			}else{
+			} else {
 				JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "El directorio no se creo con exito");
 			}
 		}
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
+
+		File fichero = null;
+		FileReader fr = null;
+		BufferedReader br = null;
+		ta_1.setText(" ");
+		try {
+			JFileChooser jfc = new JFileChooser();
+			FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivo de Texto", "txt");
+			FileNameExtensionFilter filtro2 = new FileNameExtensionFilter("Imagenes", "jpg", "png", "bmp");
+			jfc.setFileFilter(filtro);
+			jfc.addChoosableFileFilter(filtro2);
+			int seleccion = jfc.showOpenDialog(verArchivo);
+			if (seleccion == JFileChooser.APPROVE_OPTION) {
+				fichero = jfc.getSelectedFile();
+				fr = new FileReader(fichero);
+				br = new BufferedReader(fr);
+				String linea;
+				ta_1.setText(" ");
+				while ((linea = br.readLine()) != null) {
+					ta_1.append(linea);
+					ta_1.append("\n");
+				}
+			}
+		} catch (Exception e) {
+		}
+		try {
+			br.close();
+			fr.close();
+		} catch (Exception e) {
+		}
 		verArchivo.setModal(true);
 		verArchivo.pack();
 		verArchivo.setLocationRelativeTo(this);
 		verArchivo.setVisible(true);
-		
-		File fichero = null;
 //		Diagramas_Flujo_ventana.setModal(true);
 //		Diagramas_Flujo_ventana.pack();
 //		Diagramas_Flujo_ventana.setLocationRelativeTo(this);
@@ -1225,7 +1256,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea ta_text;
+    private javax.swing.JTextArea ta_1;
     private javax.swing.JDialog verArchivo;
     // End of variables declaration//GEN-END:variables
 	boolean cambios;
