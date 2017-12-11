@@ -95,10 +95,10 @@ public class Principal extends javax.swing.JFrame {
         dar_atributos_a_la_clase = new javax.swing.JMenuItem();
         Nombre = new javax.swing.JDialog();
         jLabel14 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        ta_nombre_Clase = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jr_Scanner = new javax.swing.JRadioButton();
+        jr_ArrayList = new javax.swing.JRadioButton();
         jLabel19 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -455,16 +455,16 @@ public class Principal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addGap(118, 118, 118)
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(150, 150, 150)
+                .addGap(233, 233, 233)
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(327, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DIagramas_UML_ventanaLayout = new javax.swing.GroupLayout(DIagramas_UML_ventana.getContentPane());
@@ -564,36 +564,44 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel17.setText("Librerias");
 
-        librerias.add(jRadioButton1);
-        jRadioButton1.setText("Scanner");
+        librerias.add(jr_Scanner);
+        jr_Scanner.setText("Scanner");
 
-        librerias.add(jRadioButton2);
-        jRadioButton2.setText("ArrayList");
+        librerias.add(jr_ArrayList);
+        jr_ArrayList.setText("ArrayList");
 
         jButton15.setText("Dar nombre");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout NombreLayout = new javax.swing.GroupLayout(Nombre.getContentPane());
         Nombre.getContentPane().setLayout(NombreLayout);
         NombreLayout.setHorizontalGroup(
             NombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NombreLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel14)
-                .addGap(30, 30, 30)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(NombreLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel17)
-                .addGap(36, 36, 36)
-                .addComponent(jRadioButton1))
-            .addGroup(NombreLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel19)
-                .addGap(66, 66, 66)
-                .addComponent(jRadioButton2))
-            .addGroup(NombreLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jButton15))
+                .addGroup(NombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(NombreLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel14)
+                        .addGap(30, 30, 30)
+                        .addComponent(ta_nombre_Clase, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(NombreLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel17)
+                        .addGap(36, 36, 36)
+                        .addComponent(jr_Scanner))
+                    .addGroup(NombreLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel19)
+                        .addGap(66, 66, 66)
+                        .addComponent(jr_ArrayList))
+                    .addGroup(NombreLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jButton15)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         NombreLayout.setVerticalGroup(
             NombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -601,17 +609,18 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(NombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ta_nombre_Clase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(NombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
-                    .addComponent(jRadioButton1))
+                    .addComponent(jr_Scanner))
                 .addGap(17, 17, 17)
                 .addGroup(NombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19)
-                    .addComponent(jRadioButton2))
-                .addGap(27, 27, 27)
-                .addComponent(jButton15))
+                    .addComponent(jr_ArrayList))
+                .addGap(47, 47, 47)
+                .addComponent(jButton15)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         jLabel16.setText("jLabel16");
@@ -1467,7 +1476,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
         // TODO add your handling code here:
-		final JLabel datosUML = new JLabel();
+		
 		datosUML.setOpaque(true);
 		datosUML.setBackground(Color.WHITE);
 		datosUML.setSize(100, 70);
@@ -1535,6 +1544,24 @@ public class Principal extends javax.swing.JFrame {
 		Atributos.setVisible(true);
 		Atributos.setLocationRelativeTo(Nombre);
     }//GEN-LAST:event_dar_atributos_a_la_claseActionPerformed
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+		String nombre;
+		String RadioScanner;
+		String RadioArrayList;
+		
+		nombre = ta_nombre_Clase.getText();
+		if (jr_Scanner.isSelected()) {
+			RadioScanner= "Scanner";
+		}else if (jr_ArrayList.isSelected()) {
+			RadioArrayList = "ArrayList";
+		}
+		datosUML.setText(nombre);
+		
+		datosUML.setHorizontalTextPosition(SwingConstants.CENTER);
+		
+    }//GEN-LAST:event_jButton15MouseClicked
 
 	/**
 	 * @param args the command line arguments
@@ -1644,14 +1671,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JRadioButton jr_ArrayList;
+    private javax.swing.JRadioButton jr_Scanner;
     private javax.swing.ButtonGroup librerias;
     private javax.swing.JTextArea ta_1;
+    private javax.swing.JTextField ta_nombre_Clase;
     private javax.swing.JDialog verArchivo;
     // End of variables declaration//GEN-END:variables
 	boolean cambios;
@@ -1659,4 +1686,5 @@ public class Principal extends javax.swing.JFrame {
 	JLabel globalUML = null;
 	ArrayList<JLabel> arregloLabel = new ArrayList();
 	int Inicio_o_Fin = 0;
+	final JLabel datosUML = new JLabel();
 }
