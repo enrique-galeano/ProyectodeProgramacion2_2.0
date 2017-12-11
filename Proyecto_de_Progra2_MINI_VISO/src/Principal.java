@@ -455,16 +455,16 @@ public class Principal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(118, 118, 118)
+                .addGap(115, 115, 115)
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(327, Short.MAX_VALUE))
+                .addGap(128, 128, 128)
+                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(381, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DIagramas_UML_ventanaLayout = new javax.swing.GroupLayout(DIagramas_UML_ventana.getContentPane());
@@ -1476,7 +1476,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
         // TODO add your handling code here:
-		
+		final JLabel datosUML = new JLabel();
 		datosUML.setOpaque(true);
 		datosUML.setBackground(Color.WHITE);
 		datosUML.setSize(100, 70);
@@ -1560,6 +1560,7 @@ public class Principal extends javax.swing.JFrame {
 		datosUML.setText(nombre);
 		
 		datosUML.setHorizontalTextPosition(SwingConstants.CENTER);
+		JOptionPane.showMessageDialog(Nombre, "Se le dio el nombre correctamente");
 		
     }//GEN-LAST:event_jButton15MouseClicked
 
@@ -1686,5 +1687,5 @@ public class Principal extends javax.swing.JFrame {
 	JLabel globalUML = null;
 	ArrayList<JLabel> arregloLabel = new ArrayList();
 	int Inicio_o_Fin = 0;
-	final JLabel datosUML = new JLabel();
+	 JLabel datosUML = new JLabel();
 }
