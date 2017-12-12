@@ -1,6 +1,10 @@
 
+import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.BorderLayout;
@@ -12,6 +16,7 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -1453,7 +1458,7 @@ public class Principal extends javax.swing.JFrame {
 			}
 		}
 		JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "Se genero el codigo correctamente");
-		
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -1569,7 +1574,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void dar_Nombre_a_ClaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dar_Nombre_a_ClaseMouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 
     }//GEN-LAST:event_dar_Nombre_a_ClaseMouseClicked
 
@@ -1616,45 +1621,49 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-		String f1 = null;
-		JFileChooser jf = new JFileChooser();
-		int option = jf.showSaveDialog(Diagramas_Flujo_ventana);
-		if (option == JFileChooser.APPROVE_OPTION) {
-			File f = jf.getSelectedFile();
-			f1 = f.toString();
+
+		JFileChooser jc = new JFileChooser();
+		int op = jc.showSaveDialog(Diagramas_Flujo_ventana);
+		if (op == JFileChooser.APPROVE_OPTION) {
+			try {
+				System.out.println(ruta);
+				Document doc = new Document(PageSize.A4);
+				PdfWriter.getInstance(doc, new FileOutputStream(jc.getSelectedFile().getPath() + ".pdf"));
+				doc.open();
+				Image m = Image.getInstance(ruta + ".png");
+				m.scaleAbsolute(500, 500);
+				m.setAlignment(Element.ALIGN_CENTER);
+				doc.add(m);
+				doc.close();
+			} catch (DocumentException ex) {
+				Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+			} catch (FileNotFoundException ex) {
+				Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+			} catch (IOException ex) {
+				Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+			}
 		}
-		String d = f1;
-		try {
-			System.out.println("LLega aqui?");
-			 FileOutputStream archivo = new FileOutputStream(d + ".pdf");
-			 Document doc = new Document();
-			 JPanel p = new JPanel();
-			 PdfWriter.getInstance(doc, archivo);
-			 doc.open();
-			 doc.add((Element) global);
-			 doc.close();
-			 JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "El documento se creo correctamente");
-		} catch (Exception e) {
-		}
+			JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "Se guardo el pdf correctamente");
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void imagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagenActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		JFileChooser jf = new JFileChooser();
 		int opcion = jf.showSaveDialog(Diagramas_Flujo_ventana);
 		FileNameExtensionFilter filtro = new FileNameExtensionFilter("Imagen png", "png");
 		jf.addChoosableFileFilter(filtro);
 		if (opcion == JFileChooser.APPROVE_OPTION) {
 			Dimension dimension = Panel_De_Diagramas.getSize();
-			BufferedImage imagen = new BufferedImage (dimension.width, dimension.height, BufferedImage.TYPE_INT_RGB);
+			BufferedImage imagen = new BufferedImage(dimension.width, dimension.height, BufferedImage.TYPE_INT_RGB);
 			Panel_De_Diagramas.paint(imagen.getGraphics());
 			try {
 				ImageIO.write(imagen, "png", new File(jf.getSelectedFile().getPath() + "png"));
 				ruta = jf.getSelectedFile().getPath();
-				
+
 			} catch (Exception e) {
+				System.out.println("errores " + e);
 			}
-			JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "se guargo exitosamente la imagen");
+			JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "se guargo exitosamente la imagenw");
 		}
     }//GEN-LAST:event_imagenActionPerformed
 
