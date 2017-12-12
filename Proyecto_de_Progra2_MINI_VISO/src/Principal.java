@@ -1336,7 +1336,7 @@ public class Principal extends javax.swing.JFrame {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
 			}
-			if (label.getText().contains("proceso") && !label.getText().contains("\"") && label.getText().contains("imprimir")) {
+			if (label.getText().equals("proceso") && !label.getText().equals("\"") && label.getText().equals("imprimir")) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
