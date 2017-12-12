@@ -1135,29 +1135,29 @@ public class Principal extends javax.swing.JFrame {
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
 		// TODO add your handling code here:
 		//separadores de los if cuando es si o no
-		final JLabel datos = new JLabel();
-		datos.setOpaque(true);
-		datos.setBackground(Color.WHITE);
-		Panel_De_Diagramas.add(datos);
-		datos.setSize(45, 80);
-		datos.setHorizontalTextPosition(SwingConstants.CENTER);
-		datos.setLocation(100, 100);
-		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separador.png"));
-		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+		final JLabel datos3 = new JLabel();
+		datos3.setOpaque(true);
+		datos3.setBackground(Color.WHITE);
+		Panel_De_Diagramas.add(datos3);
+		datos3.setSize(45, 80);
+		datos3.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos3.setLocation(100, 100);
+		datos3.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separador.png"));
+		datos3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
 			public void mouseDragged(java.awt.event.MouseEvent evt) {
-				global = datos;
-				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
-						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
-					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
-							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+				global = datos3;
+				if ((datos3.getLocation().x + evt.getX() - datos3.getWidth() / 2) >= 0
+						&& (datos3.getLocation().x + evt.getX() - datos3.getWidth() / 2) <= 800) {
+					datos3.setLocation(datos3.getLocation().x + evt.getX() - datos3.getWidth() / 2,
+							datos3.getLocation().y + evt.getY() - datos3.getHeight() / 2);
 
 				}
 
 			}
 		});
-		datos.addMouseListener(new MouseListener() {
+		datos3.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
-				global = datos;
+				global = datos3;
 				if (evt.isMetaDown()) {
 					System.out.println(global);
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
@@ -1165,19 +1165,19 @@ public class Principal extends javax.swing.JFrame {
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
-				global = datos;
+				global = datos3;
 			}
 
 			public void mouseExited(MouseEvent arg0) {
-				global = datos;
+				global = datos3;
 			}
 
 			public void mousePressed(MouseEvent arg0) {
-				global = datos;
+				global = datos3;
 			}
 
 			public void mouseReleased(MouseEvent arg0) {
-				global = datos;
+				global = datos3;
 			}
 		});
 
@@ -1187,29 +1187,29 @@ public class Principal extends javax.swing.JFrame {
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
 		// TODO add your handling code here:
 		//separadores de los if cuando es si o no
-		final JLabel datos = new JLabel();
-		datos.setOpaque(true);
-		datos.setBackground(Color.WHITE);
-		datos.setSize(100, 70);
-		Panel_De_Diagramas.add(datos);
-		datos.setHorizontalTextPosition(SwingConstants.CENTER);
-		datos.setLocation(100, 100);
-		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separadorV.png"));
-		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+		final JLabel datos4 = new JLabel();
+		datos4.setOpaque(true);
+		datos4.setBackground(Color.WHITE);
+		datos4.setSize(100, 70);
+		Panel_De_Diagramas.add(datos4);
+		datos4.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos4.setLocation(100, 100);
+		datos4.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/separadorV.png"));
+		datos4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
 			public void mouseDragged(java.awt.event.MouseEvent evt) {
-				global = datos;
-				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
-						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
-					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
-							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+				global = datos4;
+				if ((datos4.getLocation().x + evt.getX() - datos4.getWidth() / 2) >= 0
+						&& (datos4.getLocation().x + evt.getX() - datos4.getWidth() / 2) <= 800) {
+					datos4.setLocation(datos4.getLocation().x + evt.getX() - datos4.getWidth() / 2,
+							datos4.getLocation().y + evt.getY() - datos4.getHeight() / 2);
 
 				}
 
 			}
 		});
-		datos.addMouseListener(new MouseListener() {
+		datos4.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
-				global = datos;
+				global = datos4;
 				if (evt.isMetaDown()) {
 					System.out.println(global);
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
@@ -1217,50 +1217,50 @@ public class Principal extends javax.swing.JFrame {
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
-				global = datos;
+				global = datos4;
 			}
 
 			public void mouseExited(MouseEvent arg0) {
-				global = datos;
+				global = datos4;
 			}
 
 			public void mousePressed(MouseEvent arg0) {
-				global = datos;
+				global = datos4;
 			}
 
 			public void mouseReleased(MouseEvent arg0) {
-				global = datos;
+				global = datos4;
 			}
 		});
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
 		// TODO add your handling code here:
-		final JLabel datos = new JLabel();
-		datos.setOpaque(true);
-		datos.setBackground(Color.WHITE);
-		datos.setSize(100, 70);
-		Panel_De_Diagramas.add(datos);
-		datos.setText("subproceso");
+		final JLabel datos5 = new JLabel();
+		datos5.setOpaque(true);
+		datos5.setBackground(Color.WHITE);
+		datos5.setSize(100, 70);
+		Panel_De_Diagramas.add(datos5);
+		datos5.setText("subproceso");
 		//arregloLabel.add(datos);
-		datos.setHorizontalTextPosition(SwingConstants.CENTER);
-		datos.setLocation(100, 100);
-		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/subpro.png"));
-		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+		datos5.setHorizontalTextPosition(SwingConstants.CENTER);
+		datos5.setLocation(100, 100);
+		datos5.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/subpro.png"));
+		datos5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
 			public void mouseDragged(java.awt.event.MouseEvent evt) {
-				global = datos;
-				if ((datos.getLocation().x + evt.getX() - datos.getWidth() / 2) >= 0
-						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
-					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
-							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
+				global = datos5;
+				if ((datos5.getLocation().x + evt.getX() - datos5.getWidth() / 2) >= 0
+						&& (datos5.getLocation().x + evt.getX() - datos5.getWidth() / 2) <= 800) {
+					datos5.setLocation(datos5.getLocation().x + evt.getX() - datos5.getWidth() / 2,
+							datos5.getLocation().y + evt.getY() - datos5.getHeight() / 2);
 
 				}
 
 			}
 		});  //agrega los label
-		datos.addMouseListener(new MouseListener() {
+		datos5.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent evt) {
-				global = datos;
+				global = datos5;
 				if (evt.isMetaDown()) {
 					System.out.println(global);
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
@@ -1268,19 +1268,19 @@ public class Principal extends javax.swing.JFrame {
 			}
 
 			public void mouseEntered(MouseEvent arg0) {
-				global = datos;
+				global = datos5;
 			}
 
 			public void mouseExited(MouseEvent arg0) {
-				global = datos;
+				global = datos5;
 			}
 
 			public void mousePressed(MouseEvent arg0) {
-				global = datos;
+				global = datos5;
 			}
 
 			public void mouseReleased(MouseEvent arg0) {
-				global = datos;
+				global = datos5;
 			}
 		});
     }//GEN-LAST:event_jButton13MouseClicked
@@ -1315,7 +1315,7 @@ public class Principal extends javax.swing.JFrame {
 					bw.write("using namespace std;");
 					bw.write("\n");
 					bw.write("int main(){");
-					
+
 					bw.write("\n");
 					bw.flush();
 
@@ -1323,7 +1323,7 @@ public class Principal extends javax.swing.JFrame {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
 			}
-			if (label.getText().contains("proceso") && ((label.getText().contains("+")) || (label.getText().contains("-")) || (label.getText().contains("/")) || (label.getText().contains("*")))) {
+			if (label.getText().equals("proceso") && ((label.getText().equals("+")) || (label.getText().equals("-")) || (label.getText().equals("/")) || (label.getText().equals("*")))) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
@@ -1376,7 +1376,7 @@ public class Principal extends javax.swing.JFrame {
 				}
 
 			}
-			if (label.getText().contains("proceso") && label.getText().contains("real")) {
+			if (label.getText().equals("proceso") && label.getText().contains("real")) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
@@ -1419,15 +1419,14 @@ public class Principal extends javax.swing.JFrame {
 				}
 			}
 			try {
-			bw.close();
-			fw.close();
-		} catch (IOException ex) {
-			Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+				bw.close();
+				fw.close();
+			} catch (IOException ex) {
+				Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+			}
 		}
-		}
-
-
-
+		JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "Se genero el codigo correctamente");
+		
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -1492,13 +1491,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		final JLabel datosUML = new JLabel();
 		datosUML.setOpaque(true);
 		datosUML.setBackground(Color.WHITE);
 		datosUML.setSize(100, 70);
 		PanelUML.add(datosUML);
-	
+
 		//arregloLabel.add(datos);
 		datosUML.setHorizontalTextPosition(SwingConstants.CENTER);
 		datosUML.setLocation(100, 100);
@@ -1544,7 +1543,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void dar_Nombre_a_ClaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dar_Nombre_a_ClaseMouseClicked
         // TODO add your handling code here:
-		
+
     }//GEN-LAST:event_dar_Nombre_a_ClaseMouseClicked
 
     private void dar_Nombre_a_ClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dar_Nombre_a_ClaseActionPerformed
@@ -1555,7 +1554,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_dar_Nombre_a_ClaseActionPerformed
 
     private void dar_atributos_a_la_claseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dar_atributos_a_la_claseActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		Atributos.setModal(true);
 		Atributos.pack();
 		Atributos.setVisible(true);
@@ -1563,26 +1562,26 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_dar_atributos_a_la_claseActionPerformed
 
     private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		String nombre;
 		String RadioScanner;
 		String RadioArrayList;
-		
+
 		nombre = ta_nombre_Clase.getText();
 		if (jr_Scanner.isSelected()) {
-			RadioScanner= "Scanner";
-		}else if (jr_ArrayList.isSelected()) {
+			RadioScanner = "Scanner";
+		} else if (jr_ArrayList.isSelected()) {
 			RadioArrayList = "ArrayList";
 		}
 		seleccionado.setText(nombre);
-		
+
 		seleccionado.setHorizontalTextPosition(SwingConstants.CENTER);
 		JOptionPane.showMessageDialog(Nombre, "Se le dio el nombre correctamente");
-		
+
     }//GEN-LAST:event_jButton15MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-        // TODO add your handling code here:
+		// TODO add your handling code here:
 		for (JLabel t : arregloLabel) {
 			System.out.println(t.getName());
 		}
@@ -1709,7 +1708,7 @@ public class Principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 	boolean cambios;
 	JLabel global = null;
-	
+
 	ArrayList<JLabel> arregloLabel = new ArrayList();
 	int Inicio_o_Fin = 0;
 	JLabel seleccionado;
