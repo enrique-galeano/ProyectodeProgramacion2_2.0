@@ -49,6 +49,7 @@ public class Principal extends javax.swing.JFrame {
 	 */
 	public Principal() {
 		initComponents();
+		
 	}
 
 	/**
@@ -80,7 +81,7 @@ public class Principal extends javax.swing.JFrame {
         Panel_De_Diagramas = new javax.swing.JPanel();
         jButton17 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
+        jmenuPdf = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -335,7 +336,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jMenu2.setText("Opciones");
+        jmenuPdf.setText("Opciones");
 
         jMenuItem3.setText("Crear directorio");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -343,7 +344,7 @@ public class Principal extends javax.swing.JFrame {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        jmenuPdf.add(jMenuItem3);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.META_MASK));
         jMenuItem1.setText("Guardar");
@@ -352,7 +353,7 @@ public class Principal extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jmenuPdf.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.META_MASK));
         jMenuItem2.setText("Guardar Como");
@@ -361,7 +362,7 @@ public class Principal extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jmenuPdf.add(jMenuItem2);
 
         jMenuItem4.setText("Abrir Archivo");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -369,7 +370,7 @@ public class Principal extends javax.swing.JFrame {
                 jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        jmenuPdf.add(jMenuItem4);
 
         jMenuItem5.setText("Guardar Como pdf");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -377,7 +378,7 @@ public class Principal extends javax.swing.JFrame {
                 jMenuItem5ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem5);
+        jmenuPdf.add(jMenuItem5);
 
         imagen.setText("Guardar Como Imagen");
         imagen.addActionListener(new java.awt.event.ActionListener() {
@@ -385,9 +386,9 @@ public class Principal extends javax.swing.JFrame {
                 imagenActionPerformed(evt);
             }
         });
-        jMenu2.add(imagen);
+        jmenuPdf.add(imagen);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jmenuPdf);
 
         Diagramas_Flujo_ventana.setJMenuBar(jMenuBar1);
 
@@ -847,7 +848,7 @@ public class Principal extends javax.swing.JFrame {
 		// TODO add your handling code here:
 		cambios = false;
 		if (cambios == false) {
-
+			
 			Diagramas.setLocation(5, 5);
 			Diagramas.setSize(500, 580);
 			Cambios_de_panel.add(Diagramas, BorderLayout.CENTER);
@@ -911,7 +912,7 @@ public class Principal extends javax.swing.JFrame {
 		datos.setHorizontalTextPosition(SwingConstants.CENTER);
 		datos.setLocation(100, 100);
 		datos.setIcon(new ImageIcon("/Users/enriquejosegaleanotalavera/Desktop/IProyecto/datos.png"));
-
+		
 		datos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
 			public void mouseDragged(java.awt.event.MouseEvent evt) {
 				global = datos;
@@ -919,9 +920,9 @@ public class Principal extends javax.swing.JFrame {
 						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 645) {
 					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
 							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
-
+					
 				}
-
+				
 			}
 		});  //agrega los label
 		datos.addMouseListener(new MouseListener() {
@@ -932,19 +933,19 @@ public class Principal extends javax.swing.JFrame {
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
 				}
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				global = datos;
 			}
@@ -970,7 +971,7 @@ public class Principal extends javax.swing.JFrame {
 						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
 					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
 							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
-
+					
 				}
 			}
 		});  //agrega los label
@@ -982,19 +983,19 @@ public class Principal extends javax.swing.JFrame {
 				 pp_OP.show(evt.getComponent(), evt.getX(), evt.getY());
 				 }*/
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				global = datos;
 			}
@@ -1019,9 +1020,9 @@ public class Principal extends javax.swing.JFrame {
 						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
 					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
 							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
-
+					
 				}
-
+				
 			}
 		});  //agrega los label
 		datos.addMouseListener(new MouseListener() {
@@ -1032,19 +1033,19 @@ public class Principal extends javax.swing.JFrame {
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
 				}
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				global = datos;
 			}
@@ -1058,13 +1059,13 @@ public class Principal extends javax.swing.JFrame {
 		datos.setBackground(Color.CYAN);
 		datos.setSize(100, 70);
 		Panel_De_Diagramas.add(datos);
-
+		
 		Inicio_o_Fin++;
 		if (Inicio_o_Fin == 1) {
 			datos.setText("Inicio");
 			arregloLabel.add(0, datos);
 		} else {
-
+			
 			datos.setText("Fin");
 			arregloLabel.add(datos);
 		}
@@ -1078,9 +1079,9 @@ public class Principal extends javax.swing.JFrame {
 						&& (datos.getLocation().x + evt.getX() - datos.getWidth() / 2) <= 800) {
 					datos.setLocation(datos.getLocation().x + evt.getX() - datos.getWidth() / 2,
 							datos.getLocation().y + evt.getY() - datos.getHeight() / 2);
-
+					
 				}
-
+				
 			}
 		});  //agrega los label
 		datos.addMouseListener(new MouseListener() {
@@ -1091,19 +1092,19 @@ public class Principal extends javax.swing.JFrame {
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
 				}
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				global = datos;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				global = datos;
 			}
@@ -1131,9 +1132,9 @@ public class Principal extends javax.swing.JFrame {
 						&& (DatosProcesos.getLocation().x + evt.getX() - DatosProcesos.getWidth() / 2) <= 800) {
 					DatosProcesos.setLocation(DatosProcesos.getLocation().x + evt.getX() - DatosProcesos.getWidth() / 2,
 							DatosProcesos.getLocation().y + evt.getY() - DatosProcesos.getHeight() / 2);
-
+					
 				}
-
+				
 			}
 		});
 		DatosProcesos.addMouseListener(new MouseListener() {
@@ -1144,19 +1145,19 @@ public class Principal extends javax.swing.JFrame {
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
 				}
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				global = DatosProcesos;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				global = DatosProcesos;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				global = DatosProcesos;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				global = DatosProcesos;
 			}
@@ -1182,9 +1183,9 @@ public class Principal extends javax.swing.JFrame {
 						&& (datos3.getLocation().x + evt.getX() - datos3.getWidth() / 2) <= 800) {
 					datos3.setLocation(datos3.getLocation().x + evt.getX() - datos3.getWidth() / 2,
 							datos3.getLocation().y + evt.getY() - datos3.getHeight() / 2);
-
+					
 				}
-
+				
 			}
 		});
 		datos3.addMouseListener(new MouseListener() {
@@ -1195,24 +1196,24 @@ public class Principal extends javax.swing.JFrame {
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
 				}
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				global = datos3;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				global = datos3;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				global = datos3;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				global = datos3;
 			}
 		});
-
+		
 
     }//GEN-LAST:event_jButton10MouseClicked
 
@@ -1234,9 +1235,9 @@ public class Principal extends javax.swing.JFrame {
 						&& (datos4.getLocation().x + evt.getX() - datos4.getWidth() / 2) <= 800) {
 					datos4.setLocation(datos4.getLocation().x + evt.getX() - datos4.getWidth() / 2,
 							datos4.getLocation().y + evt.getY() - datos4.getHeight() / 2);
-
+					
 				}
-
+				
 			}
 		});
 		datos4.addMouseListener(new MouseListener() {
@@ -1247,19 +1248,19 @@ public class Principal extends javax.swing.JFrame {
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
 				}
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				global = datos4;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				global = datos4;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				global = datos4;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				global = datos4;
 			}
@@ -1285,9 +1286,9 @@ public class Principal extends javax.swing.JFrame {
 						&& (datos5.getLocation().x + evt.getX() - datos5.getWidth() / 2) <= 800) {
 					datos5.setLocation(datos5.getLocation().x + evt.getX() - datos5.getWidth() / 2,
 							datos5.getLocation().y + evt.getY() - datos5.getHeight() / 2);
-
+					
 				}
-
+				
 			}
 		});  //agrega los label
 		datos5.addMouseListener(new MouseListener() {
@@ -1298,19 +1299,19 @@ public class Principal extends javax.swing.JFrame {
 					Opciones.show(evt.getComponent(), evt.getX(), evt.getY());
 				}
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				global = datos5;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				global = datos5;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				global = datos5;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				global = datos5;
 			}
@@ -1347,10 +1348,10 @@ public class Principal extends javax.swing.JFrame {
 					bw.write("using namespace std;");
 					bw.write("\n");
 					bw.write("int main(){");
-
+					
 					bw.write("\n");
 					bw.flush();
-
+					
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
@@ -1363,7 +1364,7 @@ public class Principal extends javax.swing.JFrame {
 					bw.write(";");
 					bw.write("\n");
 					bw.flush();
-
+					
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
@@ -1376,7 +1377,7 @@ public class Principal extends javax.swing.JFrame {
 					bw.write(";");
 					bw.write("\n");
 					bw.flush();
-
+					
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
@@ -1389,11 +1390,11 @@ public class Principal extends javax.swing.JFrame {
 					bw.write(";");
 					bw.write("\n");
 					bw.flush();
-
+					
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
-
+				
 			}
 			if (label.getText().equals("proceso") && label.getText().equals("entero")) {
 				try {
@@ -1406,7 +1407,7 @@ public class Principal extends javax.swing.JFrame {
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
-
+				
 			}
 			if (label.getText().equals("proceso") && label.getText().equals("real")) {
 				try {
@@ -1416,12 +1417,12 @@ public class Principal extends javax.swing.JFrame {
 					bw.write(";");
 					bw.write("\n");
 					bw.flush();
-
+					
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
 			}
-
+			
 			if (label.getText().equals("datos")) {
 				try {
 					fw = new FileWriter(archivo, true);
@@ -1432,7 +1433,7 @@ public class Principal extends javax.swing.JFrame {
 				} catch (IOException ex) {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
-
+				
 			}
 			if (label.getText().equals("Fin")) {
 				try {
@@ -1463,6 +1464,19 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
 		// TODO add your handling code here:
+		JFileChooser jf = new JFileChooser();
+		int opcion = jf.showSaveDialog(Diagramas_Flujo_ventana);
+		if (opcion == JFileChooser.APPROVE_OPTION) {
+			AdministrarCodigo ac = new AdministrarCodigo(jf.getSelectedFile().getPath() + ".diagramaFlujo");
+			for (JLabel t : arregloLabel) {
+				ac.getListaPersonas().add(t);
+			}
+			ac.cargarArchivo();
+			try {
+				ac.escribirArchivo();
+			} catch (Exception e) {
+			}
+		}
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -1541,9 +1555,9 @@ public class Principal extends javax.swing.JFrame {
 						&& (datosUML.getLocation().x + evt.getX() - datosUML.getWidth() / 2) <= 800) {
 					datosUML.setLocation(datosUML.getLocation().x + evt.getX() - datosUML.getWidth() / 2,
 							datosUML.getLocation().y + evt.getY() - datosUML.getHeight() / 2);
-
+					
 				}
-
+				
 			}
 		});  //agrega los label
 		datosUML.addMouseListener(new MouseListener() {
@@ -1554,19 +1568,19 @@ public class Principal extends javax.swing.JFrame {
 					OpcionesUML.show(evt.getComponent(), evt.getX(), evt.getY());
 				}
 			}
-
+			
 			public void mouseEntered(MouseEvent arg0) {
 				seleccionado = datosUML;
 			}
-
+			
 			public void mouseExited(MouseEvent arg0) {
 				seleccionado = datosUML;
 			}
-
+			
 			public void mousePressed(MouseEvent arg0) {
 				seleccionado = datosUML;
 			}
-
+			
 			public void mouseReleased(MouseEvent arg0) {
 				seleccionado = datosUML;
 			}
@@ -1598,7 +1612,7 @@ public class Principal extends javax.swing.JFrame {
 		String nombre;
 		String RadioScanner;
 		String RadioArrayList;
-
+		
 		nombre = ta_nombre_Clase.getText();
 		if (jr_Scanner.isSelected()) {
 			RadioScanner = "Scanner";
@@ -1606,7 +1620,7 @@ public class Principal extends javax.swing.JFrame {
 			RadioArrayList = "ArrayList";
 		}
 		seleccionado.setText(nombre);
-
+		
 		seleccionado.setHorizontalTextPosition(SwingConstants.CENTER);
 		JOptionPane.showMessageDialog(Nombre, "Se le dio el nombre correctamente");
 
@@ -1620,8 +1634,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-
+		// TODO add your handling code here:
 		JFileChooser jc = new JFileChooser();
 		int op = jc.showSaveDialog(Diagramas_Flujo_ventana);
 		if (op == JFileChooser.APPROVE_OPTION) {
@@ -1630,7 +1643,7 @@ public class Principal extends javax.swing.JFrame {
 				Document doc = new Document(PageSize.A4);
 				PdfWriter.getInstance(doc, new FileOutputStream(jc.getSelectedFile().getPath() + ".pdf"));
 				doc.open();
-				Image m = Image.getInstance(ruta+".png");
+				Image m = Image.getInstance(ruta + ".png");
 				m.scaleAbsolute(500, 500);
 				m.setAlignment(Element.ALIGN_CENTER);
 				doc.add(m);
@@ -1641,9 +1654,11 @@ public class Principal extends javax.swing.JFrame {
 				Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 			} catch (IOException ex) {
 				Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-			} 
+			}			
 		}
-			JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "Se guardo el pdf correctamente");
+		JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "Se guardo el pdf correctamente");
+		jmenuPdf.setEnabled(true);
+		
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void imagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagenActionPerformed
@@ -1659,7 +1674,7 @@ public class Principal extends javax.swing.JFrame {
 			try {
 				ImageIO.write(imagen, "png", new File(jf.getSelectedFile().getPath() + ".png"));
 				ruta = jf.getSelectedFile().getPath();
-
+				
 			} catch (Exception e) {
 				System.out.println("errores " + e);
 			}
@@ -1681,7 +1696,7 @@ public class Principal extends javax.swing.JFrame {
 				if ("Nimbus".equals(info.getName())) {
 					javax.swing.UIManager.setLookAndFeel(info.getClassName());
 					break;
-
+					
 				}
 			}
 		} catch (ClassNotFoundException ex) {
@@ -1768,7 +1783,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -1781,6 +1795,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JMenu jmenuPdf;
     private javax.swing.JRadioButton jr_ArrayList;
     private javax.swing.JRadioButton jr_Scanner;
     private javax.swing.ButtonGroup librerias;
