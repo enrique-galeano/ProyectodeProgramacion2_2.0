@@ -1,21 +1,30 @@
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -71,6 +80,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        imagen = new javax.swing.JMenuItem();
         UML = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -354,6 +365,22 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("Guardar Como pdf");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
+        imagen.setText("Guardar Como Imagen");
+        imagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imagenActionPerformed(evt);
+            }
+        });
+        jMenu2.add(imagen);
 
         jMenuBar1.add(jMenu2);
 
@@ -1349,7 +1376,7 @@ public class Principal extends javax.swing.JFrame {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
 			}
-			if (label.getText().contains("proceso") && label.getText().contains("imprimir") && label.getText().contains("\"")) {
+			if (label.getText().equals("proceso") && label.getText().equals("imprimir") && label.getText().equals("\"")) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
@@ -1363,7 +1390,7 @@ public class Principal extends javax.swing.JFrame {
 				}
 
 			}
-			if (label.getText().contains("proceso") && label.getText().contains("entero")) {
+			if (label.getText().equals("proceso") && label.getText().equals("entero")) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
@@ -1376,7 +1403,7 @@ public class Principal extends javax.swing.JFrame {
 				}
 
 			}
-			if (label.getText().equals("proceso") && label.getText().contains("real")) {
+			if (label.getText().equals("proceso") && label.getText().equals("real")) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
@@ -1390,7 +1417,7 @@ public class Principal extends javax.swing.JFrame {
 				}
 			}
 
-			if (label.getText().contains("datos")) {
+			if (label.getText().equals("datos")) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
@@ -1587,6 +1614,50 @@ public class Principal extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_jButton17MouseClicked
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+		String f1 = null;
+		JFileChooser jf = new JFileChooser();
+		int option = jf.showSaveDialog(Diagramas_Flujo_ventana);
+		if (option == JFileChooser.APPROVE_OPTION) {
+			File f = jf.getSelectedFile();
+			f1 = f.toString();
+		}
+		String d = f1;
+		try {
+			System.out.println("LLega aqui?");
+			 FileOutputStream archivo = new FileOutputStream(d + ".pdf");
+			 Document doc = new Document();
+			 JPanel p = new JPanel();
+			 PdfWriter.getInstance(doc, archivo);
+			 doc.open();
+			 doc.add((Element) global);
+			 doc.close();
+			 JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "El documento se creo correctamente");
+		} catch (Exception e) {
+		}
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void imagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagenActionPerformed
+        // TODO add your handling code here:
+		JFileChooser jf = new JFileChooser();
+		int opcion = jf.showSaveDialog(Diagramas_Flujo_ventana);
+		FileNameExtensionFilter filtro = new FileNameExtensionFilter("Imagen png", "png");
+		jf.addChoosableFileFilter(filtro);
+		if (opcion == JFileChooser.APPROVE_OPTION) {
+			Dimension dimension = Panel_De_Diagramas.getSize();
+			BufferedImage imagen = new BufferedImage (dimension.width, dimension.height, BufferedImage.TYPE_INT_RGB);
+			Panel_De_Diagramas.paint(imagen.getGraphics());
+			try {
+				ImageIO.write(imagen, "png", new File(jf.getSelectedFile().getPath() + "png"));
+				ruta = jf.getSelectedFile().getPath();
+				
+			} catch (Exception e) {
+			}
+			JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "se guargo exitosamente la imagen");
+		}
+    }//GEN-LAST:event_imagenActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -1644,6 +1715,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem dar_Nombre_a_Clase;
     private javax.swing.JMenuItem dar_atributos_a_la_clase;
     private javax.swing.JMenuItem dar_nombre_a_variables;
+    private javax.swing.JMenuItem imagen;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1693,6 +1765,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -1708,7 +1781,7 @@ public class Principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 	boolean cambios;
 	JLabel global = null;
-
+	String ruta;
 	ArrayList<JLabel> arregloLabel = new ArrayList();
 	int Inicio_o_Fin = 0;
 	JLabel seleccionado;
