@@ -1630,7 +1630,7 @@ public class Principal extends javax.swing.JFrame {
 				Document doc = new Document(PageSize.A4);
 				PdfWriter.getInstance(doc, new FileOutputStream(jc.getSelectedFile().getPath() + ".pdf"));
 				doc.open();
-				Image m = Image.getInstance(ruta + ".png");
+				Image m = Image.getInstance(ruta+".png");
 				m.scaleAbsolute(500, 500);
 				m.setAlignment(Element.ALIGN_CENTER);
 				doc.add(m);
@@ -1641,7 +1641,7 @@ public class Principal extends javax.swing.JFrame {
 				Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 			} catch (IOException ex) {
 				Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-			}
+			} 
 		}
 			JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "Se guardo el pdf correctamente");
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -1657,7 +1657,7 @@ public class Principal extends javax.swing.JFrame {
 			BufferedImage imagen = new BufferedImage(dimension.width, dimension.height, BufferedImage.TYPE_INT_RGB);
 			Panel_De_Diagramas.paint(imagen.getGraphics());
 			try {
-				ImageIO.write(imagen, "png", new File(jf.getSelectedFile().getPath() + "png"));
+				ImageIO.write(imagen, "png", new File(jf.getSelectedFile().getPath() + ".png"));
 				ruta = jf.getSelectedFile().getPath();
 
 			} catch (Exception e) {
