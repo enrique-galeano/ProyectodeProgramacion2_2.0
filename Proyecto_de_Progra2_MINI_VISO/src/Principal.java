@@ -57,7 +57,7 @@ public class Principal extends javax.swing.JFrame {
 		cargarComponentes();
 	}
 	public void cargarComponentes(){
-		for (int i = 0; i <= 30; i++) {
+		for (int i = 11; i <= 30; i++) {
 			combo.addItem(i);
 		}
 		for (String fuente: fuentes ) {
@@ -152,7 +152,9 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         combo = new javax.swing.JComboBox();
+        textoFont = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jButton18 = new javax.swing.JButton();
         Diagrama_de_FLujo = new javax.swing.JLabel();
         Cambios_de_panel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -799,6 +801,11 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
+        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList1ValueChanged(evt);
+            }
+        });
         jScrollPane2.setViewportView(jList1);
 
         combo.addItemListener(new java.awt.event.ItemListener() {
@@ -807,9 +814,18 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel23.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("Fuentes");
+        textoFont.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
+        textoFont.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textoFont.setText("Fuentes");
+
+        jLabel23.setText("Tamaño de la fuente");
+
+        jButton18.setText("Hacer cambio de fuente");
+        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton18MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout fonts_ventanaLayout = new javax.swing.GroupLayout(fonts_ventana.getContentPane());
         fonts_ventana.getContentPane().setLayout(fonts_ventanaLayout);
@@ -818,26 +834,36 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(fonts_ventanaLayout.createSequentialGroup()
                 .addGroup(fonts_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(fonts_ventanaLayout.createSequentialGroup()
-                        .addGap(340, 340, 340)
-                        .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19)
+                        .addGroup(fonts_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel23)
+                            .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(fonts_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textoFont, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(fonts_ventanaLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(fonts_ventanaLayout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(fonts_ventanaLayout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addGap(179, 179, 179)
+                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         fonts_ventanaLayout.setVerticalGroup(
             fonts_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fonts_ventanaLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(textoFont, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(fonts_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fonts_ventanaLayout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18)
+                        .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1719,7 +1745,7 @@ public class Principal extends javax.swing.JFrame {
 		} else if (jr_ArrayList.isSelected()) {
 			RadioArrayList = "ArrayList";
 		}
-		seleccionado.setText(nombre);
+		seleccionado.setName(nombre);
 		
 		seleccionado.setHorizontalTextPosition(SwingConstants.CENTER);
 		JOptionPane.showMessageDialog(Nombre, "Se le dio el nombre correctamente");
@@ -1806,8 +1832,23 @@ public class Principal extends javax.swing.JFrame {
 
     private void comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboItemStateChanged
         // TODO add your handling code here:
-		Font f;
+		Font fo1 =  textoFont.getFont();
+		textoFont.setFont(new Font(fo1.getName(), Font.PLAIN, Integer.parseInt(String.valueOf(combo.getSelectedItem()))));
     }//GEN-LAST:event_comboItemStateChanged
+
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+        // TODO add your handling code here:
+		Font fo2 = textoFont.getFont();
+		textoFont.setFont(new Font(String.valueOf(DLM.getElementAt(jList1.getSelectedIndex())), Font.PLAIN, fo2.getSize()));
+    }//GEN-LAST:event_jList1ValueChanged
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+        // TODO add your handling code here:
+		Font fo3 = textoFont.getFont();
+		global.setFont(new Font(fo3.getName(),Font.PLAIN,Integer.parseInt(String.valueOf(combo.getSelectedItem()))));
+		global.setFont(new Font(String.valueOf(DLM.getElementAt(jList1.getSelectedIndex())), Font.PLAIN, fo3.getSize()));
+		fonts_ventana.dispose();
+    }//GEN-LAST:event_jButton18MouseClicked
 
 	/**
 	 * @param args the command line arguments
@@ -1880,6 +1921,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1936,6 +1978,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup librerias;
     private javax.swing.JTextArea ta_1;
     private javax.swing.JTextField ta_nombre_Clase;
+    private javax.swing.JLabel textoFont;
     private javax.swing.JDialog verArchivo;
     // End of variables declaration//GEN-END:variables
 	boolean cambios;
