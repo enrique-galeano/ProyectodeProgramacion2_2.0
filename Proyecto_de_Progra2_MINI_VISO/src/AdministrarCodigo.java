@@ -27,12 +27,12 @@ public class AdministrarCodigo {
         archivo=new File(path);
     }
 	
-    public ArrayList<JLabel> getListaPersonas() {
+    public ArrayList<JLabel> getListaLabels() {
         return listaLabels;
     }
 
-    public void setListaPersonas(ArrayList<JLabel> listaPersonas) {
-        this.listaLabels = listaPersonas;
+    public void setListaPersonas(ArrayList<JLabel> listaLabels) {
+        this.listaLabels = listaLabels;
     }
 
     public File getArchivo() {
