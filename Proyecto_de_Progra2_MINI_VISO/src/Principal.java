@@ -1606,7 +1606,7 @@ public class Principal extends javax.swing.JFrame {
 		JFileChooser jf = new JFileChooser();
 		int opcion = jf.showSaveDialog(Diagramas_Flujo_ventana);
 		if (opcion == JFileChooser.APPROVE_OPTION) {
-			AdministrarCodigo ac = new AdministrarCodigo(jf.getSelectedFile().getPath() + ".diagramaFlujo");
+			AdministrarCodigo ac = new AdministrarCodigo(jf.getSelectedFile().getPath() + ".diagramaF");
 			for (JLabel t : arregloLabel) {
 				ac.getListaLabels().add(t);
 			}
@@ -1873,7 +1873,7 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
 		// TODO add your handling code here:
 		JFileChooser bin = new JFileChooser();
-		int opcion = bin.showSaveDialog(Diagramas_Flujo_ventana);
+		int opcion = bin.showOpenDialog(Diagramas_Flujo_ventana);
 		if (opcion == JFileChooser.APPROVE_OPTION) {
 			AdministrarCodigo adc = new AdministrarCodigo(bin.getSelectedFile().getPath());
 			adc.cargarArchivo();
