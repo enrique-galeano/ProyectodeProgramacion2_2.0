@@ -79,12 +79,12 @@ public class Principal extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         Panel_De_Diagramas = new javax.swing.JPanel();
-        jButton17 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmenuPdf = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         imagen = new javax.swing.JMenuItem();
@@ -242,6 +242,11 @@ public class Principal extends javax.swing.JFrame {
                 jButton9MouseClicked(evt);
             }
         });
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/separador.png"))); // NOI18N
         jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -329,13 +334,6 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 592, Short.MAX_VALUE)
         );
 
-        jButton17.setText("Ver que hay en el arrayList");
-        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton17MouseClicked(evt);
-            }
-        });
-
         jmenuPdf.setText("Opciones");
 
         jMenuItem3.setText("Crear directorio");
@@ -363,6 +361,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jmenuPdf.add(jMenuItem2);
+
+        jMenuItem6.setText("Abrir Archivo Binario ");
+        jMenuItem6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem6MouseClicked(evt);
+            }
+        });
+        jmenuPdf.add(jMenuItem6);
 
         jMenuItem4.setText("Abrir Archivo");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -402,10 +408,6 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(24, 24, 24))
-            .addGroup(Diagramas_Flujo_ventanaLayout.createSequentialGroup()
-                .addGap(346, 346, 346)
-                .addComponent(jButton17)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Diagramas_Flujo_ventanaLayout.setVerticalGroup(
             Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,9 +416,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(Diagramas_Flujo_ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Panel_De_Diagramas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton17)
-                .addGap(15, 15, 15))
+                .addGap(62, 62, 62))
         );
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -1116,11 +1116,12 @@ public class Principal extends javax.swing.JFrame {
 		// TODO add your handling code here:
 		//boton de procesos
 		final JLabel DatosProcesos = new JLabel();
+		pronum++;
 		DatosProcesos.setOpaque(true);
 		DatosProcesos.setBackground(Color.WHITE);
 		DatosProcesos.setSize(100, 70);
 		Panel_De_Diagramas.add(DatosProcesos);
-		DatosProcesos.setText("proceso");
+		DatosProcesos.setName("proceso"+pronum);
 		arregloLabel.add(DatosProcesos);
 		DatosProcesos.setHorizontalTextPosition(SwingConstants.CENTER);
 		DatosProcesos.setLocation(100, 100);
@@ -1369,7 +1370,7 @@ public class Principal extends javax.swing.JFrame {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
 			}
-			if (label.getText().equals("proceso") && !label.getText().equals("\"") && label.getText().equals("imprimir")) {
+			if (label.getName().contains("proceso") && !label.getName().contains("\"") && label.getText().contains("imprimir")) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
@@ -1382,7 +1383,7 @@ public class Principal extends javax.swing.JFrame {
 					Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
 				}
 			}
-			if (label.getText().equals("proceso") && label.getText().equals("imprimir") && label.getText().equals("\"")) {
+  			if (label.getName().contains("proceso") && label.getText().contains("imprimir") && label.getText().contains("\"")) {
 				try {
 					fw = new FileWriter(archivo, true);
 					bw = new BufferedWriter(fw);
@@ -1626,13 +1627,6 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton15MouseClicked
 
-    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-		// TODO add your handling code here:
-		for (JLabel t : arregloLabel) {
-			System.out.println(t.getName());
-		}
-    }//GEN-LAST:event_jButton17MouseClicked
-
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
 		// TODO add your handling code here:
 		JFileChooser jc = new JFileChooser();
@@ -1681,6 +1675,14 @@ public class Principal extends javax.swing.JFrame {
 			JOptionPane.showMessageDialog(Diagramas_Flujo_ventana, "se guargo exitosamente la imagenw");
 		}
     }//GEN-LAST:event_imagenActionPerformed
+
+    private void jMenuItem6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem6MouseClicked
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -1748,7 +1750,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1789,6 +1790,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -1808,5 +1810,6 @@ public class Principal extends javax.swing.JFrame {
 	String ruta;
 	ArrayList<JLabel> arregloLabel = new ArrayList();
 	int Inicio_o_Fin = 0;
+	int pronum=0;
 	JLabel seleccionado;
 }
